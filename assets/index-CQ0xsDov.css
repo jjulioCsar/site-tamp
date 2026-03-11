@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --color-brand-blue-dark: #05355E;
+    --color-brand-blue-medium: #0B6FAA;
+    --color-brand-blue-light: #00B4D8;
+    --color-primary: var(--color-brand-blue-dark);
+    --color-secondary: var(--color-brand-blue-medium);
+    --color-accent: var(--color-brand-blue-light);
+    --color-bg: #FFFFFF;
+    --color-surface: #F9F9F9;
+    --color-surface-hover: #F1F5F9;
+    --color-text-heading: var(--color-brand-blue-dark);
+    --color-text-body: #333333;
+    --color-text-light: #666666;
+    --container-width: 1600px;
+    --header-height: 90px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 25px
+}
+
+html.lenis {
+    height: auto
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: Roboto, Inter, system-ui, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    cursor: auto
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Cairo, sans-serif
+}
+
+h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-text-heading)
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: -.01em;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-text-heading)
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-heading)
+}
+
+p.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text-light)
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 80px
+}
+
+@media(max-width:1200px) {
+    .container {
+        padding: 0 40px
+    }
+}
+
+@media(max-width:768px) {
+    .container {
+        padding: 0 24px
+    }
+
+    .section-padding {
+        padding: 60px 0
+    }
+}
+
+.section-padding {
+    padding: 120px 0
+}
+
+.flex-responsive {
+    display: flex;
+    flex-direction: row
+}
+
+.flex-responsive.reverse {
+    flex-direction: row-reverse
+}
+
+@media(max-width:1024px) {
+    .flex-responsive {
+        flex-direction: column !important;
+        gap: 40px
+    }
+}
+
+* {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0
+    }
+
+    to {
+        background-position: 1000px 0
+    }
+}
+
+.skeleton-shimmer {
+    background: linear-gradient(to right, #f1f5f9 8%, #e2e8f0 18%, #f1f5f9 33%);
+    background-size: 2000px 100%;
+    animation: shimmer 2s infinite linear
+}
+
+.glass-nav {
+    background: #ffffffbf !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 30px #0000000d !important
+}
+
+.btn,
+button {
+    border-radius: 25px !important
+}
+
+@media(max-width:768px) {
+    .floating-btn-container {
+        bottom: 20px !important;
+        right: 20px !important;
+        gap: 10px !important
+    }
+
+    .floating-btn-small {
+        width: 44px !important;
+        height: 44px !important
+    }
+
+    .floating-btn-large {
+        width: 54px !important;
+        height: 54px !important
+    }
+
+    .floating-btn-small svg {
+        width: 22px !important;
+        height: 22px !important
+    }
+
+    .floating-btn-large svg {
+        width: 28px !important;
+        height: 28px !important
+    }
+
+    .floating-cta-tooltip {
+        display: none !important
+    }
+}
+
+.lightbox-close-btn {
+    background: #28282899 !important;
+    border: 1px solid rgba(255, 255, 255, .4) !important;
+    color: #fff !important;
+    z-index: 9999999 !important
+}
+
+@media(max-width:768px) {
+    .lightbox-close-btn {
+        top: 15px !important;
+        right: 15px !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 20px !important
+    }
+
+    .lightbox-nav-btn {
+        width: 44px !important;
+        height: 44px !important
+    }
+
+    .lightbox-nav-btn.left {
+        left: 10px !important
+    }
+
+    .lightbox-nav-btn.right {
+        right: 10px !important
+    }
+
+    .lightbox-nav-btn svg {
+        width: 24px !important;
+        height: 24px !important
+    }
+}
+
+/* Ocultar sessões de Logística e Soluções e seus links */
+[id*="logistica"],
+[class*="logistica"],
+nav a[href*="logistica"],
+footer a[href*="logistica"],
+#logistica,
+.logistics-section,
+[id*="customizacao"],
+[class*="customizacao"],
+nav a[href*="customizacao"],
+footer a[href*="customizacao"],
+#customizacao {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* UI/UX Improvements added by Antigravity */
+
+
+/* 2. Spacing Improvements */
+/* DNA Section / Pillars */
+section#diferenciais {
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+}
+
+
+
+/* 4. Hierarquia Topográfica no Mobile */
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        line-height: 1.15 !important;
+    }
+    h2 {
+        font-size: clamp(2rem, 6vw, 2.5rem) !important;
+    }
+    p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
+}
+
+/* 5. Agrupamento e Limpeza (Melhorar disposição de botões) */
+/* Botões sociais e WhatsApp no canto (quebrando z-index as vezes) */
+.fixed.bottom-4.right-4, /* Tailwind style */
+[style*="bottom: 20px"][style*="right: 20px"] {
+    bottom: 25px !important;
+    right: 25px !important;
+    transform: scale(0.9) !important; /* Slightly smaller to clear interface space */
+}
+
+/* Footer spacing */
+#localizacao > div {
+    padding: 60px 0 !important;
+}

@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+*.log
+improve_ui.js
+optimize_images.js
+update_carrossel.js
+update_catalogo.js
+# /tmp scripts are already out of this dir
