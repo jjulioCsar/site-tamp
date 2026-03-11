@@ -295,3 +295,6 @@ section#diferenciais {
 #localizacao > div {
     padding: 60px 0 !important;
 }
+
+/* Adjust font size for the long essence title */
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem) !important; max-width: 1000px; margin-left: auto; margin-right: auto; }
